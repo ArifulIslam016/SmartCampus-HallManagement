@@ -5,7 +5,7 @@ import { useState, useEffect, useCallback } from "react";
 const slides = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=80",
+    image: "https://i.ibb.co/mr9S118D/Graphic-Arts-Institute1.jpg",
     badge: "Smart Campus Initiative",
     title: "Empowering Future",
     highlight: "Innovators",
@@ -16,7 +16,7 @@ const slides = [
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&q=80",
+    image: "https://i.ibb.co/q3jQwkZC/Graphic-Arts-Institute2.jpg",
     badge: "Academic Excellence",
     title: "Shaping Minds,",
     highlight: "Building Futures",
@@ -27,7 +27,7 @@ const slides = [
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=1600&q=80",
+    image: "https://i.ibb.co/3YQ5Xnz0/Graphic-Arts-Institute3.jpg",
     badge: "Hall Management",
     title: "Comfortable Living,",
     highlight: "Better Learning",
@@ -36,17 +36,7 @@ const slides = [
     cta: "Hall Portal",
     ctaSecondary: "Know More",
   },
-  {
-    id: 4,
-    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1600&q=80",
-    badge: "Digital Campus",
-    title: "One Platform,",
-    highlight: "Endless Possibilities",
-    subtitle:
-      "Manage attendance, results, notices and hall life — all from a single unified smart campus dashboard.",
-    cta: "Get Started",
-    ctaSecondary: "See Features",
-  },
+  
 ];
 
 const AUTOPLAY_INTERVAL = 5000;
