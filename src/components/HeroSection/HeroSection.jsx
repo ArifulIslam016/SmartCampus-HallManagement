@@ -92,7 +92,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full h-screen min-h-[600px] max-h-[900px] overflow-hidden bg-[#0a0f1e]">
-      {/* Background Images */}
+      {/* Background Images here */}
       {slides.map((s, i) => (
         <div
           key={s.id}
