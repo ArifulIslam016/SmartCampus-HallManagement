@@ -115,7 +115,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* ── Col 3: Student Portal ── */}
+          {/* Student Portal ── */}
           <div>
             <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-5 pb-2 border-b border-[#006A4E]/30">
               Student Portal
@@ -135,7 +135,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* ── Col 4: Contact Info ── */}
+          {/*Contact Info ── */}
           <div>
             <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-5 pb-2 border-b border-[#006A4E]/30">
               Contact
