@@ -1,30 +1,32 @@
 "use client";
 
 import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 
 const RegistrationPage = () => {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    studentId: '',
-    phone: '',
-    password: '',
-    confirmPassword: ''
-  });
+//   const [formData, setFormData] = useState({
+//     fullName: '',
+//     email: '',
+//     studentId: '',
+//     phone: '',
+//     password: '',
+//     confirmPassword: ''
+//   });
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+//   const handleChange = (e) => {
+//     setFormData({ ...formData, [e.target.name]: e.target.value });
+//   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match!");
-      return;
-    }
-    console.log("Registration Data:", formData);
-    // এখানে আপনার API কল বা রেজিস্ট্রেশন লজিক লিখবেন
-  };
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     if (formData.password !== formData.confirmPassword) {
+//       alert("Passwords do not match!");
+//       return;
+//     }
+const {register,handleSubmit,formState:{errors}}=useForm()
+ const handlesubmitForm=(data)=>{
+    console.log(data)
+ }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4">
@@ -34,7 +36,7 @@ const RegistrationPage = () => {
         </h2>
         <p className="text-center text-gray-500 mb-8">Join the Smart Campus & Hostel Community</p>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit(handlesubmitForm)} className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-gray-700 text-sm font-semibold mb-1">Full Name</label>
@@ -42,8 +44,8 @@ const RegistrationPage = () => {
                 type="text"
                 name="fullName"
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none transition"
-                placeholder="John Doe"
-                onChange={handleChange}
+                placeholder="Arif Islam"
+                {...register("Name", { required: true })}
                 required
               />
             </div>
@@ -53,10 +55,11 @@ const RegistrationPage = () => {
                 type="text"
                 name="studentId"
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none transition"
-                placeholder="2026101"
-                onChange={handleChange}
-                required
+                placeholder="8282.."
+                {...register("studentId", { required: true })}
+        
               />
+              {errors.studentId && <span className="text-red-500 text-sm">Student ID is required</span>}
             </div>
           </div>
 
@@ -67,8 +70,8 @@ const RegistrationPage = () => {
               name="email"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none transition"
               placeholder="name@example.com"
-              onChange={handleChange}
-              required
+              {...register("email", { required: true })}
+              er
             />
           </div>
 
@@ -79,8 +82,7 @@ const RegistrationPage = () => {
               name="phone"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none transition"
               placeholder="017XXXXXXXX"
-              onChange={handleChange}
-              required
+              {...register("phone", { required: true })}
             />
           </div>
 
@@ -92,8 +94,7 @@ const RegistrationPage = () => {
                 name="password"
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none transition"
                 placeholder="********"
-                onChange={handleChange}
-                required
+                {...register("password", { required: true })}
               />
             </div>
             <div>
@@ -103,8 +104,7 @@ const RegistrationPage = () => {
                 name="confirmPassword"
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none transition"
                 placeholder="********"
-                onChange={handleChange}
-                required
+                {...register("confirmPassword", { required: true })}
               />
             </div>
           </div>
